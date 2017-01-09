@@ -29,18 +29,18 @@
     * CommentsIndexItem
 
 ### AudioPlayerContainer
-    * AudioPlayer
+  * AudioPlayer
 
 ### NewSongContainer
   * NewSongForm
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/sign-up"    | "AuthForm"  |
-| "/sign-in"    | "AuthForm"  |
-| "/home"     | "HomeContainer"    |
-| "/user/:id"    | "UserContainer"   |
+|Path           | Component   |
+|---------------|-------------------|
+| "/sign-up"    | "AuthForm"        |
+| "/sign-in"    | "AuthForm"        |
+| "/home"       | "HomeContainer"   |
+| "/user/:id"   | "UserContainer"   |
 | "/upload"     | "NewSongContainer"|
-| "/song/:id"  | "SongsContainer"     |
+| "/song/:id"   | "SongsContainer"  |

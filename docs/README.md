@@ -13,11 +13,11 @@ Allegro is a web application for uploading and streaming user-created music, ins
 - Infinite Scroll
 
 ## Design DOCS
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+* [View Wireframes](https://github.com/cjudge1337/Allegro/tree/master/docs/wireframes)
+* [React Components](https://github.com/cjudge1337/Allegro/blob/master/docs/component-hierarchy.md)
+* [API endpoints](https://github.com/cjudge1337/Allegro/blob/master/docs/api-endpoints.md)
+* [DB schema](https://github.com/cjudge1337/Allegro/blob/master/docs/schema.md)
+* [Sample State](https://github.com/cjudge1337/Allegro/blob/master/docs/sample-state.md)
 
 ## Implementation Timeline
 
