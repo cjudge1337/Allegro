@@ -23,7 +23,7 @@
 - `DELETE /api/songs/:id`
 
 ## Comments
-- `GET /api/comments`
+- `GET /api/songs/:song_id/comments`
 - `GET /api/comments/:id`
 - `POST /api/comments`
 - `PATCH /api/comments/:id`

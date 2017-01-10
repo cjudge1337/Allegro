@@ -17,7 +17,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 title           | string    | not null, indexed, unique
 song_url        | string    | not null
-song_img_url    | string    | not null, indexed, unique
+song_img_url    | string    | indexed, default: stock_image.png
 user_id         | integer   | not null, indexed, foreign key (references users)
 
 ## Comments

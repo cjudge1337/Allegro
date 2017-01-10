@@ -21,13 +21,13 @@ Allegro is a web application for uploading and streaming user-created music, ins
 
 ## Implementation Timeline
 
-### Phase 1: Backend and Auth (1 day)
+### Phase 1: Backend and Auth (2 day)
 - [ ] Users model
 - [ ] Users / Sessions controllers
 - [ ] AuthForm component
 
 
-### Phase 2: Songs (4 days)
+### Phase 2: Songs (3 days)
 - [ ] Songs model
 - [ ] Songs controller
 - [ ] NewSongForm component
