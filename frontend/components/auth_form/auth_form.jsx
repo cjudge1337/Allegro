@@ -14,7 +14,7 @@ constructor(props) {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+			this.props.router.push("/home");
 		}
 	}
 
@@ -27,7 +27,7 @@ constructor(props) {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm(user);
+		this.props.processForm(user).then(() => this.props.router.push("/home"));
 	}
 
 	navLink() {

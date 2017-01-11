@@ -22,7 +22,7 @@ const SessionReducer = (state = _nullState, action) => {
     case RECEIVE_ERRORS:
       return {
         currentUser: null,
-        errors: action.errors
+        errors: [action.errors]
       };
     default:
       return state;
