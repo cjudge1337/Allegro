@@ -1,7 +1,16 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
+import Home from './home';
 
-const HomeContainer = () => (
-  <div>test</div>
+const mapStateToProps = ({ session }) => (
+  session
 );
 
-export default HomeContainer;
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
