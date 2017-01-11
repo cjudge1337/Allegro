@@ -28,7 +28,6 @@ constructor(props) {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		debugger
 		this.props.processForm(user).then(() => this.props.router.push("/home"));
 	}
 
@@ -76,14 +75,14 @@ constructor(props) {
 						{this.renderErrors()}
 						<div className="login-form">
 							<br/>
-							<label className="form-label"> Username
+							<label className="form-label"> Username:
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />
 							</label>
 							<br/>
-							<label className="form-label"> Password
+							<label className="form-label"> Password:
 								<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
