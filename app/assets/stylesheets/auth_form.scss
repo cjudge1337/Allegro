@@ -1,4 +1,74 @@
+// .html {
+//   background-color: #1B676B;
+// }
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
 .logo {
-  height: 200px;
-  width: 650px;
+  width: 36%;
+  height: 15%;
+  align-self: center;
+  padding: 40px;
+}
+
+.login-form-container {
+  display: flex;
+  align-self: center;
+  background-color: #EAFDE6;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  box-shadow: 3px 3px 3px 2px black;
+  font-size: 15px;
+}
+
+.login-form-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-title {
+  align-self: center;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.login-input {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-label {
+  border-bottom: 1px solid black;
+}
+
+.guest-login {
+  align-self: flex-start;
+  padding-right: 12px;
 }

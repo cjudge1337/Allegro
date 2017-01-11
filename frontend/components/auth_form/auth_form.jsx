@@ -28,6 +28,7 @@ constructor(props) {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
+		debugger
 		this.props.processForm(user).then(() => this.props.router.push("/home"));
 	}
 
@@ -36,11 +37,19 @@ constructor(props) {
 		this.props.demoLogin().then(() => this.props.router.push("/home"));
 	}
 
+	title() {
+		if (this.props.formType === "sign-in") {
+			return ( <h3 className="form-title">Sign In</h3> );
+		} else {
+			return ( <h3 className="form-title">Sign Up</h3> );
+		}
+	}
+
 	navLink() {
 		if (this.props.formType === "sign-in") {
-			return <Link to="/sign-up">sign up instead</Link>;
+			return <Link to="/sign-up">Sign up instead</Link>;
 		} else {
-			return <Link to="/sign-in">sign in instead</Link>;
+			return <Link to="/sign-in">Sign in instead</Link>;
 		}
 	}
 
@@ -59,28 +68,29 @@ constructor(props) {
 	render() {
 		return (
 			<div className="login-page-container">
-				<img src="http://res.cloudinary.com/diqwtxdmo/image/upload/v1484113835/Logomakr_3T31QW_ggg8a3.png" className="logo" />
+				<img src="/assets/logo.png" className="logo" />
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
-						Please {this.props.formType} or {this.navLink()}
+						{this.title()}
+						{this.navLink()}
 						{this.renderErrors()}
 						<div className="login-form">
 							<br/>
-							<label> Username:
+							<label className="form-label"> Username
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />
 							</label>
 							<br/>
-							<label> Password:
+							<label className="form-label"> Password
 								<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
 									className="login-input" />
 							</label>
 							<br/>
-							<input type="submit" value="Submit" />
+							<button>Submit</button>
 						</div>
 					</form>
 					<button

@@ -1,0 +1,52 @@
+html {
+	position: relative;
+	height: 100%;
+  background-color: $dark-blue;
+}
+
+body {
+	width: 80%;
+	margin: 0 auto;
+	font-family: serif;
+	font-size: 12px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+button {
+	background-color: $dark-green;
+	border-color: $dark-blue;
+	color: white;
+	font-weight: bold;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: $medium-green;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+}
+
+form {
+  background-color: $lightest-green;
+  text-align: center;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
