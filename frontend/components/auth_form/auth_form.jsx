@@ -6,6 +6,7 @@ constructor(props) {
 		super(props);
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleGuest = this.handleGuest.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -28,6 +29,11 @@ constructor(props) {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user).then(() => this.props.router.push("/home"));
+	}
+
+	handleGuest(e) {
+		e.preventDefault();
+		this.props.demoLogin().then(() => this.props.router.push("/home"));
 	}
 
 	navLink() {
@@ -75,6 +81,12 @@ constructor(props) {
 						<input type="submit" value="Submit" />
 					</div>
 				</form>
+				<button
+					type="button"
+					onClick={this.handleGuest}
+					className="guest-login">
+					Guest
+				</button>
 			</div>
 		);
 	}
