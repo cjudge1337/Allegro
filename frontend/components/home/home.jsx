@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import SongsListContainer from './songs_list_container';
+import NavbarContainer from '../navbar/navbar_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -16,9 +17,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
-        <nav>
-          <button type="button" onClick={this.handleLogout}>Logout</button>
-        </nav>
+        <NavbarContainer session={this.props.session} />
         <SongsListContainer songs={this.props.songs}/>
       </div>
     );
