@@ -33,7 +33,7 @@ export const fetchSongs = () => dispatch => (
 
 
 export const fetchSong = id => dispatch => (
-  SongApiUtil.fetchSongs(id)
+  SongApiUtil.fetchSong(id)
   .then(song => dispatch(receiveSong(song)),
         error => dispatch(receiveErrors(error.responseJSON)))
 );

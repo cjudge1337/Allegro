@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchSongs, fetchSong, createSong, updateSong, deleteSong } from './actions/song_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -11,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+
+  window.fetchSongs = fetchSongs;
+  window.fetchSong = fetchSong;
+  window.createSong = createSong;
+  window.updateSong = updateSong;
+  window.deleteSong = deleteSong;
+
 
   window.store = store;
   const root = document.getElementById('root');
