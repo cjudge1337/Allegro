@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchSongs, fetchSong, createSong, updateSong, deleteSong } from './actions/song_actions';
+import { asObject } from './reducers/selectors';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createSong = createSong;
   window.updateSong = updateSong;
   window.deleteSong = deleteSong;
-
+  window.asObject = asObject;
 
   window.store = store;
   const root = document.getElementById('root');
