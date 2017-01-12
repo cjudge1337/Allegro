@@ -7,11 +7,13 @@
   },
   errors: ["Invalid login credentials"],
   songs: {
-    id: 1,
-    title: "Sample Song",
-    song_url: "www.samplehosting.com/song",
-    song_img_url: "www.samplehosting/song_img",
-    user_id: 1,
+    1: {
+      id: 1,
+      title: "Sample Song",
+      song_url: "www.samplehosting.com/song",
+      song_img_url: "www.samplehosting/song_img",
+      user_id: 1,
+    }
   },
   comments: {
     1: {
