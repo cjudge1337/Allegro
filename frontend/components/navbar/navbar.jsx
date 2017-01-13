@@ -8,21 +8,6 @@ class Navbar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  handleUpload(e) {
-    e.preventDefault();
-    cloudinary.openUploadWidget(
-      window.cloudinary_options,
-      function(error, results) {
-        if (!error) {
-          this.props.saveSong(results[0]);
-        }
-      }.bind(this));
-  }
-
-  saveSong(results) {
-
-  }
-
   handleLogout(e) {
     e.preventDefault();
     this.props.logout().then(() => this.props.router.push("/sign-in"));
@@ -31,7 +16,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar-container">
-        <img src="/assets/upload-icon.png" onClick={this.handleUpload} className="upload-img"></img>
+        <Link to="/upload">
+          <img src="/assets/upload-icon.png" className="upload-img"></img>
+        </Link>
         <button type="button" onClick={this.handleLogout}>Logout</button>
       </div>
     );
