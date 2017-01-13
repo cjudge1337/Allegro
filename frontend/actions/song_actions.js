@@ -4,6 +4,8 @@ export const RECEIVE_SONGS = "RECEIVE_SONGS";
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const REMOVE_SONG = "REMOVE_SONG";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const PLAY_SONG = "PLAY_SONG";
+export const PAUSE_SONG = "PAUSE_SONG";
 
 export const receiveSongs = songs => ({
   type: RECEIVE_SONGS,
@@ -23,6 +25,15 @@ export const removeSong = song => ({
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+export const playSong = song => ({
+  type: PLAY_SONG,
+  song
+});
+
+export const pauseSong = () => ({
+  type: PAUSE_SONG
 });
 
 export const fetchSongs = () => dispatch => (

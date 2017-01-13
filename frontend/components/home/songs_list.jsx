@@ -17,7 +17,8 @@ class SongsList extends React.Component {
     songItems = Object.keys(songs).map(key => (
         <SongListItem key={songs[key].id}
                       song={songs[key]}
-                      fetchSong={this.props.fetchSong} />
+                      fetchSong={this.props.fetchSong}
+                      playSong={this.props.playSong} />
                   )
     );
   }
