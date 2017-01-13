@@ -6,12 +6,6 @@ import NavbarContainer from '../navbar/navbar_container';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.handleLogout = this.handleLogout.bind(this);
-  }
-
-  handleLogout(e) {
-    e.preventDefault();
-    this.props.logout().then(() => this.props.router.push("/sign-in"));
   }
 
   render() {
