@@ -19,7 +19,7 @@ class SongPlayer extends React.Component {
       total: '00:00',
       position: 0,
       playFromPosition: 0,
-      positionSeconds: 0,
+      positionSeconds: 0
     };
 
     this.handleSongPlaying = this.handleSongPlaying.bind(this);
@@ -49,7 +49,6 @@ class SongPlayer extends React.Component {
   }
 
   handleSongPlaying(audio) {
-    console.log(audio.buffered);
     this.setState({ elapsed: this.formatMilliseconds(audio.position),
         total: this.formatMilliseconds(audio.duration),
         position: audio.position / audio.duration,
