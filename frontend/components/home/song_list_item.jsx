@@ -9,7 +9,6 @@ class SongListItem extends React.Component {
   playPause(e) {
     e.preventDefault();
     this.props.playSong(this.props.song);
-    $('#play_pause_button').trigger('click');
   }
 
   render() {
