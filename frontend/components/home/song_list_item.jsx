@@ -14,6 +14,7 @@ class SongListItem extends React.Component {
   render() {
     return (
       <li className="song-list-item" key={this.props.song.id}>
+        <img src={this.props.song.song_img_url}></img>
         {this.props.song.title}
         <button type="button" onClick={this.playPause}></button>
       </li>

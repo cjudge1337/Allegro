@@ -12,8 +12,8 @@ class SongsList extends React.Component {
 
   render() {
     let songItems;
-    let songs = this.props.songs;
-    if (this.props.songs) {
+    let songs = this.props.songs.index;
+    if (this.props.songs.index) {
     songItems = Object.keys(songs).map(key => (
         <SongListItem key={songs[key].id}
                       song={songs[key]}

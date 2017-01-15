@@ -15,12 +15,15 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <div className="navbar-container" id={this.props.hiddenOnSignup}>
+      <nav className="navbar-container" id={this.props.hiddenOnSignup}>
+        <Link to="/home">
+          <div className="stream-button">Stream</div>
+        </Link>
         <Link to="/upload">
           <img src="/assets/upload-icon.png" className="upload-img"></img>
         </Link>
         <button type="button" onClick={this.handleLogout}>Logout</button>
-      </div>
+      </nav>
     );
   }
 }

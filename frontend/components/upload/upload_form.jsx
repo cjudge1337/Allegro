@@ -24,8 +24,11 @@ class UploadForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     let song = this.state;
-    this.props.createSong(song);
-    this.props.router.push("/home");
+    this.props.createSong(song).then(res => {
+      debugger
+      this.props.router.push(`/song/${res.song.id}`);
+    });
+
   }
 
   uploadAudio (e) {
