@@ -7,6 +7,8 @@ class Api::SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     @song.user_id = current_user.id
+    @song.artist = current_user.username
+
     if @song.save
       render :show
     else
@@ -36,7 +38,7 @@ class Api::SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :song_url, :song_img_url)
+    params.require(:song).permit(:title, :song_url, :song_img_url, :song_panel_img_url, :artist)
   end
 
 end
