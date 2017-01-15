@@ -16,7 +16,6 @@ class Player extends React.Component {
         </div>
         <div className="player-main">
           <button onClick={this.props.togglePlay}><i className={playPauseClass}></i></button>
-          <button onClick={this.props.stop}><i className="fa fa-stop"></i></button>
         </div>
         <div className="player-forward">
           <button onClick={this.props.forward}><i className="fa fa-forward"></i></button>

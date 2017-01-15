@@ -19,12 +19,10 @@ class App extends React.Component {
   render () {
 
     return (
-      <div className="app-container">
-        <div className="app">
-          <NavbarContainer session={this.props.session} hiddenOnSignup={this.hiddenOnSignup()}/>
-          { this.props.children }
-          <SongPlayerContainer hiddenOnSignup={this.hiddenOnSignup()}/>
-        </div>
+      <div className="app">
+        <NavbarContainer session={this.props.session} hiddenOnSignup={this.hiddenOnSignup()}/>
+        { this.props.children }
+        <SongPlayerContainer hiddenOnSignup={this.hiddenOnSignup()}/>
       </div>
     );
   }

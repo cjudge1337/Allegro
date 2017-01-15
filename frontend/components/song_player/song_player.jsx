@@ -8,7 +8,6 @@ class SongPlayer extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.state = this.props.nowPlaying;
 
     this.handleSongPlaying = this.handleSongPlaying.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
