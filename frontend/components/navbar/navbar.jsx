@@ -15,7 +15,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <div className="navbar-container">
+      <div className="navbar-container" id={this.props.hiddenOnSignup}>
         <Link to="/upload">
           <img src="/assets/upload-icon.png" className="upload-img"></img>
         </Link>

@@ -3,7 +3,7 @@ import { createSong } from '../../actions/song_actions';
 import { logout } from '../../actions/session_actions';
 import Navbar from './navbar';
 
-const mapStateToProps = ({ session, router }) => (
+const mapStateToProps = ({ session }) => (
   session
 );
 
