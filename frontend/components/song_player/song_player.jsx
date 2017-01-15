@@ -8,19 +8,7 @@ class SongPlayer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      song: {
-        title: "Test",
-        song_url: "http://res.cloudinary.com/diqwtxdmo/video/upload/v1484327350/hphouvhqwmmgfarmpxes.mp3",
-        song_img_url: ""
-      },
-      playStatus: Sound.status.STOPPED,
-      elapsed: '00:00',
-      total: '00:00',
-      position: 0,
-      playFromPosition: 0,
-      positionSeconds: 0
-    };
+    // this.state = this.props.nowPlaying;
 
     this.handleSongPlaying = this.handleSongPlaying.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
@@ -49,69 +37,70 @@ class SongPlayer extends React.Component {
   }
 
   handleSongPlaying(audio) {
-    this.setState({ elapsed: this.formatMilliseconds(audio.position),
-        total: this.formatMilliseconds(audio.duration),
-        position: audio.position / audio.duration,
-        totalSeconds: audio.duration,
-        positionSeconds: audio.position
-      });
+    this.props.updatePlayingSong({ elapsed: this.formatMilliseconds(audio.position),
+      total: this.formatMilliseconds(audio.duration),
+      position: audio.position / audio.duration,
+      totalSeconds: audio.duration,
+      positionSeconds: audio.position
+    });
   }
 
   handleSongFinished() {
-    //Firgure out how to load next song
+    //Figure out how to load next song
   }
 
   togglePlay() {
-    if(this.state.playStatus === Sound.status.PLAYING){
-      this.setState({playStatus: Sound.status.PAUSED});
+    if(this.props.nowPlaying.playStatus === Sound.status.PLAYING){
+      this.props.updatePlayingSong({playStatus: Sound.status.PAUSED});
     } else {
-      this.setState({playStatus: Sound.status.PLAYING});
+      this.props.updatePlayingSong({playStatus: Sound.status.PLAYING});
     }
   }
 
   stop() {
-   this.setState({playStatus: Sound.status.STOPPED});
+   this.props.updatePlayingSong({playStatus: Sound.status.STOPPED});
   }
 
   forward() {
-    let newSeconds = this.state.positionSeconds + 10000;
-    this.setState({ playFromPosition: newSeconds });
+    let newSeconds = this.props.nowPlaying.positionSeconds + 10000;
+    this.props.updatePlayingSong({playFromPosition: newSeconds});
   }
 
   backward() {
-    this.setState({playFromPosition: this.state.playFromPosition -= 1000 * 10});
+    let newSeconds = this.props.nowPlaying.positionSeconds - 10000;
+    this.props.updatePlayingSong({playFromPosition: newSeconds});
   }
 
   clickAdjust(xPosition) {
     let barWidth = this.state.$progressBar.width();
     let leftOffset = this.state.$progressBar.offset().left;
     let ratio = (xPosition - leftOffset) / barWidth;
-    let newPosition = this.state.totalSeconds * ratio;
-    this.setState({playFromPosition: newPosition});
+    let newPosition = this.props.nowPlaying.totalSeconds * ratio;
+    this.props.updatePlayingSong({playFromPosition: newPosition});
   }
 
    render() {
 
      return (
        <div className="song-player">
-         <Details title={this.state.title} />
+         <Details title={this.props.nowPlaying.title} />
 
          <Player togglePlay={this.togglePlay.bind(this)}
                  stop={this.stop.bind(this)}
-                 playStatus={this.state.playStatus}
+                 playStatus={this.props.nowPlaying.playStatus}
                  forward={this.forward.bind(this)}
                  backward={this.backward.bind(this)} />
 
-         <Progress position={this.state.position}
-                   elapsed={this.state.elapsed}
-                   total={this.state.total}
+         <Progress position={this.props.nowPlaying.position}
+                   elapsed={this.props.nowPlaying.elapsed}
+                   total={this.props.nowPlaying.total}
                    clickAdjust={this.clickAdjust.bind(this)}/>
 
          <Sound
-               url={this.state.song.song_url}
-               playStatus={this.state.playStatus}
+               url={this.props.nowPlaying.song.song_url}
+               playStatus={this.props.nowPlaying.playStatus}
                onPlaying={this.handleSongPlaying}
-               playFromPosition={this.state.playFromPosition}
+               playFromPosition={this.props.nowPlaying.playFromPosition}
                onFinishedPlaying={this.handleSongFinished.bind(this)} />
        </div>
      );

@@ -6,6 +6,7 @@ export const REMOVE_SONG = "REMOVE_SONG";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const PLAY_SONG = "PLAY_SONG";
 export const PAUSE_SONG = "PAUSE_SONG";
+export const UPDATE_PLAYING_SONG = "PLAYING_SONG";
 
 export const receiveSongs = songs => ({
   type: RECEIVE_SONGS,
@@ -32,9 +33,15 @@ export const playSong = song => ({
   song
 });
 
+export const updatePlayingSong = songData => ({
+  type: UPDATE_PLAYING_SONG,
+  songData
+});
+
 export const pauseSong = () => ({
   type: PAUSE_SONG
 });
+
 
 export const fetchSongs = () => dispatch => (
   SongApiUtil.fetchSongs()

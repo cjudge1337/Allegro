@@ -1,11 +1,12 @@
-import { PLAY_SONG } from '../actions/song_actions';
+import { PLAY_SONG, UPDATE_PLAYING_SONG } from '../actions/song_actions';
 import { merge } from 'lodash';
 import Sound from 'react-sound';
 
 const nullState = {
     song: {
-      title: "Test",
-      song_url: "http://res.cloudinary.com/diqwtxdmo/video/upload/v1484327350/hphouvhqwmmgfarmpxes.mp3",
+      id: 0,
+      title: "",
+      song_url: "",
       song_img_url: ""
     },
     playStatus: Sound.status.STOPPED,
@@ -20,15 +21,12 @@ const NowPlayingReducer = (state = nullState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case PLAY_SONG:
-    debugger
-    let newState = merge({}, state);
-    let newSong = {
-      url: action.song.song_url,
-      displayText: action.song.title
-    };
-    newState['playlist'].unshift(newSong);
-    newState['playing'] = true;
-    return newState;
+      return merge({}, state, {
+        song: action.song,
+        playStatus: Sound.status.PLAYING
+      });
+    case UPDATE_PLAYING_SONG:
+      return merge({}, state, action.songData);
     default:
       return state;
   }
