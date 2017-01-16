@@ -16,13 +16,18 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar-container" id={this.props.hiddenOnSignup}>
-        <Link to="/home">
-          <div className="stream-button">Stream</div>
-        </Link>
-        <Link to="/upload">
-          <img src="/assets/upload-icon.png" className="upload-img"></img>
-        </Link>
-        <button type="button" onClick={this.handleLogout}>Logout</button>
+        <div className="navbar-left">
+          <img src="/assets/logo.png" className="navbar-logo"/>
+          <Link to="/home">
+            <h1 className="stream-link">Stream</h1>
+          </Link>
+        </div>
+        <div className="navbar-right">
+          <Link to="/upload">
+            <img src="/assets/upload-icon.png" className="upload-img"></img>
+          </Link>
+          <button type="button" onClick={this.handleLogout} className="logout-button">Logout</button>
+        </div>
       </nav>
     );
   }
