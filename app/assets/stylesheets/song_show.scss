@@ -1,0 +1,65 @@
+// Place all the styles related to the Songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.song-show-container {
+  // background-color: red;
+  height: 100%;
+  width: 100%;
+}
+
+.song-show-panel-container {
+  display: flex;
+  background-image: url(http://res.cloudinary.com/diqwtxdmo/image/upload/c_scale,w_958/v1484543599/StockSnap_W7WDKWMG0I_x9jcsx.jpg);
+  margin: 0 18%;
+  padding: 20px;
+  justify-content: space-around;
+  box-shadow: 3px 3px 2px 0px black;
+
+}
+
+.song-panel-left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.song-show-image {
+  height: 350px;
+  width: 350px;
+  display: inline;
+  padding: 4px;
+  background-color: $grey;
+  border: 1px solid $white;
+}
+
+.song-show-play-button {
+  background-color: black;
+  width: 65px;
+  height: 60px;
+  border-radius: 50px;
+  padding-right: 3px;
+  margin-bottom: 20px;
+}
+
+.song-show-title {
+  display: inline;
+  background-color: black;
+  color: $white;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.song-show-artist{
+  display: inline;
+  color: $grey;
+  font-size: 20px;
+}
+
+
+.song-show-comments-container {
+  margin: 30px 20% 0 20%;
+  font-size: 40px;
+  border: 1px solid $black;
+  border-radius: 3px;
+  box-shadow: inset 0 0 10px #000000;
+}

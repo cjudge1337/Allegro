@@ -13,15 +13,16 @@
  *= require_self
  */
 
-// // Reset
-// @import 'reset.scss';
-//
-// // base
-// @import 'colors.scss';
-// @import 'layout.scss';
-//
-// // components
-// @import 'auth_form.scss';
-// @import 'navbar.scss';
-// @import 'home.scss';
-// @import 'song_player.scss';
+// Reset
+@import 'reset.scss';
+
+// base
+@import 'colors.scss';
+@import 'layout.scss';
+
+// components
+@import 'auth_form.scss';
+@import 'navbar.scss';
+@import 'home.scss';
+@import 'song_player.scss';
+@import 'song_show.scss';

@@ -1,11 +1,13 @@
 .navbar-container {
+  position: fixed;
+  top: 0px;
   display: flex;
-  background-color: $dark-blue;
+  background-color: $black;
   height: 40px;
   width: 100%;
   align-items: flex-end;
   box-shadow: 1px 2px 3px 0px black;
-  border-radius: 3px;
+  z-index: 1;
 }
 
 .upload-img {

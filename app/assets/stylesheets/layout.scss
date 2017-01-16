@@ -1,7 +1,7 @@
 html {
 	position: relative;
 	height: 100%;
-	background: $lightest-green;
+	background: $grey;
 }
 
 body {
@@ -9,16 +9,28 @@ body {
 	margin: 0 auto;
 	font-family: 'Exo 2', sans-serif;
 	font-size: 12px;
-  height: 80%;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
 }
 
+#root {
+	margin-top: 40px;
+}
+
+.app {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+
 button {
-	background-color: $dark-green;
-	border-color: $dark-blue;
-	color: white;
+	background-color: $dark-red;
+	border-color: $dark-red;
+	color: $white;
 	font-weight: bold;
 	padding: 7px 9px;
 	border-radius: 3px;
@@ -32,7 +44,7 @@ button {
 }
 
 button:hover {
-  background-color: $medium-green;
+  background-color: $light-red;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 form {
-  background-color: $lightest-green;
+  background-color: $grey;
   text-align: center;
 }
 

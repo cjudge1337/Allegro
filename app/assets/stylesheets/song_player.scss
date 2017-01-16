@@ -1,3 +1,21 @@
+.song-player {
+  position: fixed;
+  bottom: 0px;
+  background-color: $black;
+  width: 65%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  box-shadow: 3px 3px 2px 0px black;
+}
+
+.player {
+  display: flex;
+}
+//
 // /* Box sizing resets*/
 // *, *:before, *:after {
 //   box-sizing: border-box;
@@ -84,7 +102,7 @@
 //   border-radius: 2px;
 //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 // }
-//
+// //
 // .progress progress[value]::-webkit-progress-value {
 //     background-color: rgb(243, 139, 114);
 //     border-radius: 2px;

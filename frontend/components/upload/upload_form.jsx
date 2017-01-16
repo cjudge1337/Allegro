@@ -25,7 +25,6 @@ class UploadForm extends React.Component {
     e.preventDefault();
     let song = this.state;
     this.props.createSong(song).then(res => {
-      debugger
       this.props.router.push(`/song/${res.song.id}`);
     });
 
@@ -51,7 +50,7 @@ class UploadForm extends React.Component {
         if (!error) {
           const path = results[0].path;
           const url =
-          "http://res.cloudinary.com/diqwtxdmo/image/upload/w_200,h_200,c_fit/";
+          "http://res.cloudinary.com/diqwtxdmo/image/upload/";
           this.setState({ song_img_url: url + path });
         }
       }
