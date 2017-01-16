@@ -1,11 +1,81 @@
 .home-container {
   display: flex;
   height: 100%;
-  width: 100%;
+  margin-left: 18%;
+  margin-right: 18%;
 
 }
 
+.songs-list-container {
+  display: flex;
+  display: inline-flex;
+}
+
+.songs-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.song-list-item {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  border: 2px solid grey;
+  margin: 20px;
+  border-radius: 3px;
+}
+
 .song-list-image {
-  height: 200px;
-  width: 200px;
+  height: 240px;
+  width: 240px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.song-list-item-button {
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 0px;
+  display: block;
+}
+
+.song-list-item-button:hover {
+  opacity: 1;
+}
+
+button.song-list-item-button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.play-button {
+  color: white;
+}
+
+.play-button:active {
+  color: $light-red;
+}
+
+
+.song-list-item-title {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: black;
+  font-size: 16px
+}
+
+.song-list-item-title:hover {
+  color: $black;
+}
+
+.song-list-item-artist {
+  display: inline-block;
+  margin-bottom: 5px;
+
 }
