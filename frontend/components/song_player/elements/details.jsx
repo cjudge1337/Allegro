@@ -5,7 +5,8 @@ class Details extends React.Component {
   render(){
     return(
       <div className="song-player-details">
-        <h3>{this.props.title}</h3>
+        <h3 className="song-player-title">{this.props.title}</h3>
+        <h2 className="song-player-artist">{this.props.artist}</h2>
       </div>
     );
   }

@@ -79,10 +79,10 @@ class SongPlayer extends React.Component {
   }
 
    render() {
-
      return (
        <div className="song-player" id={this.props.hiddenOnSignup}>
-         <Details title={this.props.nowPlaying.title} />
+         <Details title={this.props.nowPlaying.song.title}
+                  artist={this.props.nowPlaying.song.artist}/>
 
          <Player togglePlay={this.togglePlay.bind(this)}
                  stop={this.stop.bind(this)}
