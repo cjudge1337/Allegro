@@ -81,20 +81,23 @@ class SongPlayer extends React.Component {
    render() {
      return (
        <div className="song-player" id={this.props.hiddenOnSignup}>
-         <Details title={this.props.nowPlaying.song.title}
-                  artist={this.props.nowPlaying.song.artist}/>
 
          <Player togglePlay={this.togglePlay.bind(this)}
                  stop={this.stop.bind(this)}
                  playStatus={this.props.nowPlaying.playStatus}
                  forward={this.forward.bind(this)}
-                 backward={this.backward.bind(this)} />
+                 backward={this.backward.bind(this)}
+                 className="song-player-player-container"/>
 
          <Progress position={this.props.nowPlaying.position}
                    elapsed={this.props.nowPlaying.elapsed}
                    total={this.props.nowPlaying.total}
-                   clickAdjust={this.clickAdjust.bind(this)}/>
+                   clickAdjust={this.clickAdjust.bind(this)}
+                   className="song-player-progress-container"/>
 
+         <Details title={this.props.nowPlaying.song.title}
+           artist={this.props.nowPlaying.song.artist}
+           className="song-player-details-container"/>
          <Sound
                url={this.props.nowPlaying.song.song_url}
                playStatus={this.props.nowPlaying.playStatus}
