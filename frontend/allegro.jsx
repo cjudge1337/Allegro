@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchComments, fetchComment, createComment, deleteComment } from './util/comment_api_util';
+import { fetchComments, fetchComment, createComment, deleteComment } from './actions/comment_actions';
 import { asObject } from './reducers/selectors';
 
 
