@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :songs
+  has_many :comments
 
   attr_reader :password
 

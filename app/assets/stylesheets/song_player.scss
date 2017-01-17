@@ -2,13 +2,11 @@
   position: fixed;
   bottom: 0px;
   background-color: $black;
-  width: 65%;
+  width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-self: center;
-  margin-bottom: 10px;
-  border-radius: 7px;
   box-shadow: 3px 3px 2px 0px black;
 }
 
@@ -17,6 +15,7 @@
   justify-content: center;
   width: 33.3%;
   padding-top: 3px;
+  margin-left: 17%;
 }
 
 .player-backward {
@@ -36,6 +35,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 17%;
 }
 
 .song-player-title {
@@ -82,8 +82,10 @@ progress::-webkit-progress-value {
 
 .player-time-elapsed {
   margin-right: 4px;
+  color: $grey;
 }
 
 .player-time-total {
   margin-left: 4px;
+  color: $grey;
 }
