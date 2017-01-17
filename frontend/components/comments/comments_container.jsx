@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchComments, fetchComment, deleteComment } from '../../actions/comment_actions';
+import { fetchComments, fetchComment, deleteComment, createComment } from '../../actions/comment_actions';
 import CommentsList from './comments_list';
 
 const mapStateToProps = ({ songs }) => ({
@@ -9,7 +9,8 @@ const mapStateToProps = ({ songs }) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchComments: songId => dispatch(fetchComments(songId)),
   fetchComment: commentId => dispatch(fetchComment(commentId)),
-  deleteComment: song => dispatch(deleteComment(song))
+  deleteComment: comment => dispatch(deleteComment(comment)),
+  createComment: comment => dispatch(createComment(comment))
 });
 
 export default connect(
