@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchSongs, fetchSong, createSong, updateSong, deleteSong } from './actions/song_actions';
+import { fetchComments, fetchComment, createComment, deleteComment } from './util/comment_api_util';
 import { asObject } from './reducers/selectors';
 
 
@@ -15,12 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.fetchSongs = fetchSongs;
-  window.fetchSong = fetchSong;
-  window.createSong = createSong;
-  window.updateSong = updateSong;
-  window.deleteSong = deleteSong;
-  window.asObject = asObject;
+  window.fetchComments = fetchComments;
+  window.fetchComment = fetchComment;
+  window.createComment = createComment;
+  window.deleteComment = deleteComment;
 
   window.store = store;
   const root = document.getElementById('root');
