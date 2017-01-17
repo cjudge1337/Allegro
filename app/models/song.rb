@@ -15,5 +15,8 @@ class Song < ApplicationRecord
   validates :title, :song_url, :user_id, presence: true
 
   belongs_to :user
-  has_many :comments
+  has_many :comments,
+    class_name: :Comment,
+    foreign_key: :song_id,
+    primary_key: :id
 end
