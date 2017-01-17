@@ -75,15 +75,17 @@ constructor(props) {
 						{this.renderErrors()}
 						<div className="login-form">
 							<br/>
-							<label className="form-label"> Username:
+							<label className="form-label">
 								<input type="text"
+									placeholder="Username"
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />
 							</label>
 							<br/>
-							<label className="form-label"> Password:
+							<label className="form-label">
 								<input type="password"
+									placeholder="Password"
 									value={this.state.password}
 									onChange={this.update("password")}
 									className="login-input" />
