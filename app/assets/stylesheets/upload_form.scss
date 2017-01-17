@@ -1,0 +1,45 @@
+.upload-form-container {
+  align-self: center;
+  margin-top: 170px;
+  width: 33%;
+}
+
+.upload-form {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  background-color: $black;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $grey;
+  box-shadow: 3px 3px 3px 2px black;
+  border-radius: 5px;
+  font-size: 17px;
+  align-items: center;
+}
+
+.upload-form-title {
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-submit {
+  transition: background-color 0.3s;
+  background-color: $dark-red;
+	box-shadow: 1px 1px 2px 0px black;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  padding: 7px 9px;
+  width: 42%;
+}
+
+.upload-button {
+  width: 42%;
+}
+
+.form-submit:hover {
+  background-color: $light-red;
+}

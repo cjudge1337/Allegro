@@ -59,15 +59,15 @@ class UploadForm extends React.Component {
 
   render () {
      return (
-     <div className="form-container">
-       <form onSubmit={this.handleSubmit}>
-         <h1>Upload Track</h1>
-         <label>Title
-           <input onChange={this.handleChange} name="title"></input>
+     <div className="upload-form-container">
+       <form onSubmit={this.handleSubmit} className="upload-form">
+         <h1 className="upload-form-title">Upload A Song</h1>
+         <label>
+           <input onChange={this.handleChange} placeholder="Title"></input>
          </label>
-         <button type="button" onClick={this.uploadImage} className="upload-button">Upload Image</button>
-         <button type="button" onClick={this.uploadAudio} className="upload-button">Upload Song</button>
-         <input type="submit" value="Upload Track" className="form-submit"/>
+         <button type="button" onClick={this.uploadImage} className="upload-button">Album Art</button>
+         <button type="button" onClick={this.uploadAudio} className="upload-button">Song File</button>
+         <input type="submit" value="Upload Song" className="form-submit"/>
        </form>
    </div>
      );

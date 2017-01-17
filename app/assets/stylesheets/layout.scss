@@ -55,12 +55,19 @@ form {
 }
 
 a {
+	transition: 0.3s ease;
   color: blue;
 }
 
 a:hover {
   text-decoration: underline;
 }
+
+input {
+	background-color: white;
+  box-shadow: inset 0 0 10px black;
+}
+
 
 #hidden {
 	display: none;
