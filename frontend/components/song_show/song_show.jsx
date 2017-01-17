@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentsListContainer from '../comments/comments_container';
 
 class SongShow extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class SongShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchSong(this.props.params.songid);
+    this.props.fetchComments(this.props.params.songid);
   }
 
   play(e) {
@@ -32,9 +34,7 @@ class SongShow extends React.Component {
           </div>
           <img src={song.song_img_url} className="song-show-image"></img>
         </div>
-        <div className="song-show-comments-container">
-          Future comments box
-        </div>
+        { song.comments ? <CommentsListContainer /> : ""}
       </div>
     );
   }

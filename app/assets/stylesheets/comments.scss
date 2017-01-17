@@ -1,0 +1,23 @@
+.comment-list-item {
+  margin: 0 18%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid grey;
+  padding: 10px;
+}
+
+.comment-list-item:first-child {
+  margin-top: 20px;
+}
+
+.comment-list-item-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  margin-right: 50px;
+}
+
+.comment-list-item-text {
+  font-size: 17px;
+}
