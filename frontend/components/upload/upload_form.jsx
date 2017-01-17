@@ -63,7 +63,7 @@ class UploadForm extends React.Component {
        <form onSubmit={this.handleSubmit} className="upload-form">
          <h1 className="upload-form-title">Upload A Song</h1>
          <label>
-           <input onChange={this.handleChange} placeholder="Title"></input>
+           <input onChange={this.handleChange} placeholder="Title" className="upload-input"></input>
          </label>
          <button type="button" onClick={this.uploadImage} className="upload-button">Album Art</button>
          <button type="button" onClick={this.uploadAudio} className="upload-button">Song File</button>
