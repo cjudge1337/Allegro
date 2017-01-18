@@ -31,7 +31,7 @@ class CommentListItem extends React.Component {
         <button type="button"
                 className="comment-list-delete-button"
                 id={this.hiddenUnlessUser()}
-                onClick={this.handleDelete}/>
+                onClick={this.handleDelete}>Delete</button>
       </li>
     );
   }
