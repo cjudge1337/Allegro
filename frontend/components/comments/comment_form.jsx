@@ -20,7 +20,7 @@ class CommentForm extends React.Component {
       body: this.state.body,
       song_id: this.props.songId
     };
-    this.props.createComment(comment);
+    this.props.createComment(comment).then(() => this.setState({ body: ""}));
   }
 
   render() {
@@ -29,7 +29,8 @@ class CommentForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="comment-form">
           <input onChange={this.handleChange}
                 className="comment-form-input"
-                placeholder="Write a comment"></input>
+                placeholder="Write a comment"
+                value={this.state.body}></input>
           <input type="submit"
                 value="Add comment"
                 className="comment-form-button"></input>
