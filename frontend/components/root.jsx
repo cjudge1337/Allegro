@@ -6,6 +6,7 @@ import AuthFormContainer from './auth_form/auth_form_container';
 import HomeContainer from './home/home_container';
 import UploadFormContainer from './upload/upload_form_container';
 import SongShowContainer from './song_show/song_show_container';
+import UserPageContainer from './user_page/user_page_container';
 
 const Root = ({ store }) => {
   const ensureLoggedIn = (nextState, replace) => {
@@ -38,5 +39,6 @@ const Root = ({ store }) => {
   );
 };
 
+// <Route path="/user/:username" component={ UserPageContainer } onEnter={ensureLoggedIn} />
 
 export default Root;
