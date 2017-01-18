@@ -22,10 +22,20 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      render :show
+    else
+      render json: { errors: ["Invalid input"] }, status: 422
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:password, :username)
+    params.require(:user).permit(:password, :username, :bio, :panel_url,
+                                 :profile_pic_url, :password_digest, :session_token)
   end
 
 end
