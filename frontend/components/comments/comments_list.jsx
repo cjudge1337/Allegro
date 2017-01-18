@@ -18,12 +18,13 @@ class CommentList extends React.Component {
     commentItems = Object.keys(comments).map((key, idx) => (
         <CommentListItem key={idx}
                       comment={comments[key]}
+                      session={this.props.session}
                       fetchComment={this.props.fetchComment}
                       deleteComment={this.props.deleteComment} />
                   )
     );
   }
-
+  
     return (
       <div className="comments-list-container">
         <CommentFormContainer songId={this.props.songId}/>

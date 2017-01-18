@@ -29,7 +29,7 @@ const SongsReducer = (state = {}, action) => {
     case REMOVE_COMMENT:
       let newComments = merge({}, state['showSong']['comments']);
       delete newComments[action.comment.id];
-      return merge({}, state, { showSong: { comments: newComments } });
+      return { showSong: extend({}, state.showSong, { comments: newComments }) };
     default:
       return state;
   }
