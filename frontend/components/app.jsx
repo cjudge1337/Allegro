@@ -22,10 +22,10 @@ class App extends React.Component {
       <div className="app">
         <NavbarContainer session={this.props.session} hiddenOnSignup={this.hiddenOnSignup()}/>
         { this.props.children }
-        <SongPlayerContainer hiddenOnSignup={this.hiddenOnSignup()}/>
       </div>
     );
   }
 }
 
+// <SongPlayerContainer hiddenOnSignup={this.hiddenOnSignup()}/>
 export default App;

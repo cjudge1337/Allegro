@@ -6,6 +6,7 @@ class CommentListItem extends React.Component {
     super(props);
   }
 
+
   render() {
     return (
       <li className="comment-list-item" key={this.props.comment.id}>

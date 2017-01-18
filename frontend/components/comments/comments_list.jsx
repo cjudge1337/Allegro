@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentListItem from './comment_list_item';
+import CommentFormContainer from './comment_form_container';
 
 class CommentList extends React.Component {
   constructor(props) {
@@ -14,8 +15,8 @@ class CommentList extends React.Component {
     let commentItems;
     let comments = this.props.songs.showSong.comments;
     if (this.props.songs.showSong.comments) {
-    commentItems = Object.keys(comments).map(key => (
-        <CommentListItem key={comments[key].id}
+    commentItems = Object.keys(comments).map((key, idx) => (
+        <CommentListItem key={idx}
                       comment={comments[key]}
                       fetchComment={this.props.fetchComment}
                       deleteComment={this.props.deleteComment} />
@@ -25,6 +26,7 @@ class CommentList extends React.Component {
 
     return (
       <div className="comments-list-container">
+        <CommentFormContainer songId={this.props.songId}/>
         <ul className="comments-list">
           { commentItems }
         </ul>

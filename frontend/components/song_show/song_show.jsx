@@ -22,7 +22,7 @@ class SongShow extends React.Component {
     if (this.props.songs.showSong) {
       song = this.props.songs.showSong;
     }
-
+    
     return (
       <div className="song-show-container">
         <div className="song-show-panel-container">
@@ -34,7 +34,7 @@ class SongShow extends React.Component {
           </div>
           <img src={song.song_img_url} className="song-show-image"></img>
         </div>
-        { song.comments ? <CommentsListContainer /> : ""}
+        { song.comments ? <CommentsListContainer songId={parseInt(this.props.params.songid)}/> : ""}
       </div>
     );
   }

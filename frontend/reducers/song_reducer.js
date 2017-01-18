@@ -25,7 +25,7 @@ const SongsReducer = (state = {}, action) => {
     case RECEIVE_COMMENTS:
       return merge({}, state, { showSong: { comments: asObject(action.comments) } });
     case RECEIVE_COMMENT:
-      return merge({}, state, { showSong: { comments: action.comment } });
+      return merge({}, state, { showSong: { comments: { [action.comment.id]: action.comment } } });
     case REMOVE_COMMENT:
       let newComments = merge({}, state['showSong']['comments']);
       delete newComments[action.comment.id];
