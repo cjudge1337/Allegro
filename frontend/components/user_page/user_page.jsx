@@ -20,13 +20,6 @@ class UserPage extends React.Component {
     this.props.fetchUser(this.props.params.userid);
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      username: this.props.username,
-      bio: this.props.bio
-    });
-  }
-
   uploadPanelPic(e) {
     e.preventDefault();
     cloudinary.openUploadWidget(
@@ -102,16 +95,20 @@ class UserPage extends React.Component {
       <div className="user-page-container">
         <img src={this.props.panel_url} className="user-page-panel" />
         <div className="user-page-details">
-          <h1 className="user-page-username">{this.props.username}</h1>
-          <p className="user-page-bio">{this.props.bio}</p>
           <img src={this.props.profile_pic_url} className="user-profile-pic" />
+          <h1 className="user-page-username">{this.props.username}</h1>
         </div>
-        <button className="user-page-panel-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
-        <button className="user-page-profile-button" onClick={this.uploadProfilePic}>Update User Pic</button>
-        <button className="user-page-info-button" onClick={this.handleClick}>Update Info</button>
-        <ul className="user-page-songs-list-container">
-          {songItems}
-        </ul>
+        <div className="user-page-lower-container">
+          <ul className="user-page-songs-list">
+            {songItems}
+          </ul>
+          <p className="user-page-bio">{this.props.bio}</p>
+        </div>
+        <div className="user-page-buttons">
+          <button className="user-page-panel-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
+          <button className="user-page-profile-button" onClick={this.uploadProfilePic}>Update User Pic</button>
+          <button className="user-page-info-button" onClick={this.handleClick}>Update Info</button>
+        </div>
 
         <Modal
               isOpen={this.state.modalOpen}

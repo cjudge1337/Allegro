@@ -18,11 +18,12 @@ class UploadForm extends React.Component {
 
   handleChange (e) {
     e.preventDefault();
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ title: e.target.value });
   }
 
   handleSubmit (e) {
     e.preventDefault();
+    debugger
     let song = this.state;
     this.props.createSong(song).then(res => {
       this.props.router.push(`/song/${res.song.id}`);
@@ -62,9 +63,7 @@ class UploadForm extends React.Component {
      <div className="upload-form-container">
        <form onSubmit={this.handleSubmit} className="upload-form">
          <h1 className="upload-form-title">Upload A Song</h1>
-         <label>
-           <input onChange={this.handleChange} placeholder="Title" className="upload-input"></input>
-         </label>
+         <input onChange={this.handleChange} placeholder="Title" className="upload-input"></input>
          <button type="button" onClick={this.uploadImage} className="upload-button">Album Art</button>
          <button type="button" onClick={this.uploadAudio} className="upload-button">Song File</button>
          <input type="submit" value="Upload Song" className="form-submit"/>

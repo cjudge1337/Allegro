@@ -22,5 +22,7 @@ export const style = {
     bottom          : '0',
     padding         : '0',
     zIndex          : 3,
+    opacity         : 0,
+    transition      : 'opacity 1s'
   }
 };
