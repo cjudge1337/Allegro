@@ -1,18 +1,30 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import UserPageSong from './user_page_song';
+import Modal from 'react-modal';
+import { style } from '../../../app/assets/stylesheets/modal_style';
+import InfoForm from './info_form';
 
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { modalOpen: false };
 
     this.uploadPanelPic = this.uploadPanelPic.bind(this);
     this.uploadProfilePic = this.uploadProfilePic.bind(this);
-    this.uploadBio = this.uploadBio.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.onModalClose = this.onModalClose.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.params.userid);
+  }
+
+  componentWillReceiveProps() {
+    this.setState({
+      username: this.props.username,
+      bio: this.props.bio
+    });
   }
 
   uploadPanelPic(e) {
@@ -59,6 +71,20 @@ class UserPage extends React.Component {
     );
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({ modalOpen: true});
+  }
+
+  onModalClose() {
+    this.setState({ modalOpen: false });
+    style.content.opacity = 0;
+  }
+
+  onModalOpen() {
+    style.content.opacity = 100;
+  }
+
   render() {
     let songItems;
     if (this.props.songs) {
@@ -75,18 +101,32 @@ class UserPage extends React.Component {
     return (
       <div className="user-page-container">
         <img src={this.props.panel_url} className="user-page-panel" />
-        <div>
-
+        <div className="user-page-details">
           <h1 className="user-page-username">{this.props.username}</h1>
           <p className="user-page-bio">{this.props.bio}</p>
           <img src={this.props.profile_pic_url} className="user-profile-pic" />
         </div>
         <button className="user-page-panel-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
         <button className="user-page-profile-button" onClick={this.uploadProfilePic}>Update User Pic</button>
-        <button className="user-page-bio-button" onClick={this.uploadBio}>Update Bio</button>
+        <button className="user-page-info-button" onClick={this.handleClick}>Update Info</button>
         <ul className="user-page-songs-list-container">
           {songItems}
         </ul>
+
+        <Modal
+              isOpen={this.state.modalOpen}
+              onRequestClose={this.onModalClose}
+              style={style}
+              onAfterOpen={this.onModalOpen}
+              contentLabel={"Modal"}>
+                <button onClick={this.onModalClose}>X</button>
+                <InfoForm bio={this.props.bio}
+                          username={this.props.username}
+                          id={this.props.id}
+                          panel_url={this.props.panel_url}
+                          profile_pic_url={this.props.profile_pic_url}
+                          updateUser={this.props.updateUser}></InfoForm>
+        </Modal>
       </div>
     );
   }
