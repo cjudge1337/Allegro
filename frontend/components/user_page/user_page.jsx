@@ -98,16 +98,17 @@ class UserPage extends React.Component {
           <img src={this.props.profile_pic_url} className="user-profile-pic" />
           <h1 className="user-page-username">{this.props.username}</h1>
         </div>
+        <div className="user-page-buttons">
+          <button className="user-page-button" onClick={this.uploadProfilePic}>Update User Pic</button>
+          <button className="user-page-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
+          <button className="user-page-button" onClick={this.handleClick}>Update Info</button>
+        </div>
+        <h3 className="user-page-songs-title">Songs</h3>
         <div className="user-page-lower-container">
           <ul className="user-page-songs-list">
             {songItems}
           </ul>
           <p className="user-page-bio">{this.props.bio}</p>
-        </div>
-        <div className="user-page-buttons">
-          <button className="user-page-panel-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
-          <button className="user-page-profile-button" onClick={this.uploadProfilePic}>Update User Pic</button>
-          <button className="user-page-info-button" onClick={this.handleClick}>Update Info</button>
         </div>
 
         <Modal
@@ -116,7 +117,7 @@ class UserPage extends React.Component {
               style={style}
               onAfterOpen={this.onModalOpen}
               contentLabel={"Modal"}>
-                <button onClick={this.onModalClose}>X</button>
+                <button className="modal-close" onClick={this.onModalClose}>X</button>
                 <InfoForm bio={this.props.bio}
                           username={this.props.username}
                           id={this.props.id}

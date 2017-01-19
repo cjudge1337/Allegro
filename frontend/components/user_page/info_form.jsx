@@ -41,14 +41,19 @@ class InfoForm extends React.Component {
 
      return (
        <form className="user-page-info-form" onSubmit={this.handleSubmit}>
-         <input className="user-page-username-input"
-                onChange={this.handleUsernameChange}
-                placeholder="Username"
-                value={this.state.username}></input>
-         <input className="user-page-bio-input"
-                 onChange={this.handleBioChange}
-                 placeholder="Description"
-                 value={this.state.bio}></input>
+         <label className="user-page-form-label"> Username:
+             <input className="user-page-username-input"
+                    onChange={this.handleUsernameChange}
+                    placeholder="Username"
+                    value={this.state.username}></input>
+          </label>
+          <label className="user-page-form-label"> Description:
+             <textarea className="user-page-bio-input"
+                     rows="5"
+                     onChange={this.handleBioChange}
+                     placeholder="Description"
+                     value={this.state.bio}></textarea>
+          </label>
          <input type="submit"
                 className="user-page-info-submit"
                 value="Submit"></input>

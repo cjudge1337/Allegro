@@ -8,15 +8,16 @@
   position: relative;
   width: 100%;
   height: 50vh;
-  z-index: -1;
+  z-index: -2;
   box-shadow: 3px 3px 2px 0px black;
 }
 
 .user-page-details {
   display: flex;
-  position: relative;
-  bottom: 30vh;
-  left: 3vw;
+  position: absolute;
+  bottom: 50vh;
+  left: 21vw;
+  z-index: -1;
 }
 
 .user-profile-pic {
@@ -38,25 +39,50 @@
   margin-left: 30px;
 }
 
+.user-page-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.user-page-button {
+  margin-left: 7px;
+}
+
+.user-page-songs-title {
+  font-size: 40px;
+  border-bottom: 2px solid black;
+}
+
 .user-page-lower-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.user-page-bio {
+  width: 33%;
+}
+
+.user-page-songs-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 30px;
 }
 
 .user-song-list-item {
   display: flex;
-  flex-direction: column;
-  padding: 4px;
-  border: 2px solid grey;
-  margin: 20px;
-  border-radius: 3px;
+  flex-direction: row;
+  border-bottom: 1px solid grey;
+  align-items: center;
+  padding: 30px 30px 30px 0px;
 }
 
 .user-song-list-image {
-  height: 240px;
-  width: 240px;
+  height: 150px;
+  width: 150px;
   display: inline-block;
-  margin-bottom: 5px;
 }
 
 .user-song-list-item-button {
@@ -65,8 +91,8 @@
   background: rgba(0, 0, 0, 0.2);
   padding: 0;
   margin: 0;
-  width: 240px;
-  height: 240px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   z-index: 1;
   border-radius: 0px;
@@ -91,10 +117,11 @@ button.user-song-list-item-button:hover {
 
 
 .user-song-list-item-title {
-  display: inline-block;
-  margin-bottom: 5px;
+  display: inline;
   color: black;
-  font-size: 18px
+  font-size: 18px;
+  align-self: center;
+  margin-left: 40px;
 }
 
 .user-song-list-item-title:hover {
@@ -105,4 +132,59 @@ button.user-song-list-item-button:hover {
   display: inline-block;
   margin-bottom: 5px;
   font-size: 13px;
+}
+
+.user-page-info-form {
+  background-color: $black;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-page-username-input {
+  font-size: 12px;
+  margin-left: 7px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.user-page-bio-input {
+  font-size: 12px;
+  color: black;
+  background-color: $grey;
+  box-shadow: inset 0 0 10px black;
+  text-align: left;
+  padding: 5px;
+  margin-left: 7px;
+}
+
+.user-page-form-label {
+  font-size: 17px;
+  color: $grey;
+}
+
+.user-page-info-submit {
+  background-color: $dark-red;
+  border-color: $dark-red;
+  color: $white;
+  font-weight: bold;
+  padding: 7px 9px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 12px;
+  box-shadow: 1px 1px 2px 0px black;
+}
+
+.user-page-info-submit:hover {
+  background-color: $light-red;
+}
+
+.modal-close {
+  margin-left: 10px;
 }

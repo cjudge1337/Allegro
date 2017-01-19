@@ -23,6 +23,8 @@ export const style = {
     padding         : '0',
     zIndex          : 3,
     opacity         : 0,
-    transition      : 'opacity 1s'
+    transition      : 'opacity 1s',
+    backgroundColor : "#333333",
+  	boxShadow       : "3px 3px 2px 0px black"
   }
 };
