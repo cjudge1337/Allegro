@@ -33,12 +33,12 @@ const Root = ({ store }) => {
           <Route path="/sign-up" component={ AuthFormContainer } onEnter={redirectIfLoggedIn}/>
           <Route path="/upload" component={ UploadFormContainer } onEnter={ensureLoggedIn}/>
           <Route path="/song/:songid" component={ SongShowContainer } onEnter={ensureLoggedIn} />
+          <Route path="/user/:userid" component={ UserPageContainer } onEnter={ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>
   );
 };
 
-// <Route path="/user/:username" component={ UserPageContainer } onEnter={ensureLoggedIn} />
 
 export default Root;

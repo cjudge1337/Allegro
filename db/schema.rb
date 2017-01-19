@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117013230) do
+ActiveRecord::Schema.define(version: 20170118232531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 20170117013230) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                                                                                                                null: false
-    t.string   "password_digest",                                                                                                         null: false
-    t.string   "session_token",                                                                                                           null: false
+    t.string   "username",                                                                                                                            null: false
+    t.string   "password_digest",                                                                                                                     null: false
+    t.string   "session_token",                                                                                                                       null: false
     t.string   "profile_pic_url", default: "http://res.cloudinary.com/diqwtxdmo/image/upload/v1484521698/guitar-1245856_1280_nhv8yl.jpg"
-    t.string   "panel_url",       default: "http://res.cloudinary.com/diqwtxdmo/image/upload/v1484519755/tech-870970_1280_g9geei.png"
+    t.string   "panel_url",       default: "http://res.cloudinary.com/diqwtxdmo/image/upload/v1484782097/piano-keyboard-keys-music-54615_k0awan.jpg"
     t.text     "bio"
-    t.datetime "created_at",                                                                                                              null: false
-    t.datetime "updated_at",                                                                                                              null: false
+    t.datetime "created_at",                                                                                                                          null: false
+    t.datetime "updated_at",                                                                                                                          null: false
     t.index ["session_token"], name: "index_users_on_session_token", using: :btree
     t.index ["username"], name: "index_users_on_username", using: :btree
   end

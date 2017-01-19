@@ -1,5 +1,6 @@
 # json.extract! user, :username, :password_digest, :session_token, :profile_pic_url,
 #   :panel_url, :bio
+  json.id user.id
   json.username user.username
   json.password_digest user.password_digest
   json.session_token user.session_token
