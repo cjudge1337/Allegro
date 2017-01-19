@@ -22,9 +22,9 @@ class CommentList extends React.Component {
                       fetchComment={this.props.fetchComment}
                       deleteComment={this.props.deleteComment} />
                   )
-    );
+    ).reverse();
   }
-  
+
     return (
       <div className="comments-list-container">
         <CommentFormContainer songId={this.props.songId}/>

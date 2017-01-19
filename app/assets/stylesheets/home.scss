@@ -23,6 +23,7 @@
   border: 2px solid grey;
   margin: 20px;
   border-radius: 3px;
+  align-items: center;
 }
 
 .song-list-image {
@@ -78,4 +79,12 @@ button.song-list-item-button:hover {
   display: inline-block;
   margin-bottom: 5px;
   font-size: 13px;
+}
+
+.song-list-item-artist {
+  color: black;
+}
+
+.song-list-item-artist:hover {
+  color: $black;
 }

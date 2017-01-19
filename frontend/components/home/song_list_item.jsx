@@ -20,7 +20,9 @@ class SongListItem extends React.Component {
         <Link to={`/song/${this.props.song.id}`} className="song-list-show-link">
           <h1 className="song-list-item-title">{this.props.song.title}</h1>
         </Link>
-        <h2 className="song-list-item-artist">{this.props.song.artist}</h2>
+        <Link to={`/user/${this.props.song.user_id}`} className="song-list-item-artist">
+          <h2 className="song-list-item-artist">{this.props.song.artist}</h2>
+        </Link>
       </li>
     );
   }

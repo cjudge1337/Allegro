@@ -31,9 +31,6 @@ class CommentForm extends React.Component {
                 className="comment-form-input"
                 placeholder="Write a comment"
                 value={this.state.body}></input>
-          <input type="submit"
-                value="Add comment"
-                className="comment-form-button"></input>
         </form>
       </div>
     );
@@ -41,4 +38,7 @@ class CommentForm extends React.Component {
 
 }
 
+// <input type="submit"
+//   value="Add comment"
+//   className="comment-form-button"></input>
 export default CommentForm;

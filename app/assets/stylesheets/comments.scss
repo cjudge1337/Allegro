@@ -4,10 +4,14 @@
 
 .comment-list-item {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid grey;
   padding: 10px;
+  flex-direction: row;
+  h5 {
+    flex: 1;
+  }
 }
 
 .comment-list-item-pic {
@@ -17,15 +21,34 @@
   margin-right: 50px;
 }
 
+.comment-list-item-link {
+  font-size: 14px;
+  color: $black;
+}
+
 .comment-list-item-text {
   font-size: 17px;
+  align-self: flex-end;
+}
+
+.comment-list-delete-button {
+
 }
 
 .comment-form-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 10px;
   border-bottom: 1px solid grey;
+  padding: 21px;
+  margin: 0px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-form-input {
+  width: 60vw;
+  font-size: 20px;
 }
 
 .comment-form-button {
@@ -42,11 +65,9 @@
   text-align: center;
   margin-top: 12px;
   box-shadow: 1px 1px 2px 0px black;
+  align-self: flex-end;
 }
 
 .comment-form-button:hover {
   background-color: $light-red;
-}
-
-.comment-list-delete-button {
 }
