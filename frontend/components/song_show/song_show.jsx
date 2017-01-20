@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentsListContainer from '../comments/comments_container';
+import { Link } from 'react-router';
 
 class SongShow extends React.Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class SongShow extends React.Component {
           <div className="song-panel-left-side">
             <button type="button" className="song-show-play-button fa fa-play fa-3x" onClick={this.play}>
             </button>
-            <h2 className="song-show-artist">{song.artist}</h2>
+            <Link to={`/user/${song.user_id}`}>
+              <h2 className="song-show-artist">{song.artist}</h2>
+            </Link>
             <h1 className="song-show-title">{song.title}</h1>
           </div>
           <img src={song.song_img_url} className="song-show-image"></img>
