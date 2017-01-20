@@ -1,5 +1,5 @@
 # Allegro
-![Allegro.audio](allegro.audio) is a full-stack web application designed for users to upload and share music with others. It is inspired by SoundCloud and is built using a Ruby on Rails backend, a PostgreSQL database, and a React.js/Redux framework on the frontend.
+[Allegro.audio](allegro.audio) is a full-stack web application designed for users to upload and share music with others. It is inspired by SoundCloud and is built using a Ruby on Rails backend, a PostgreSQL database, and a React.js/Redux framework on the frontend.
 
 ![Allegro sign-in page: http://www.allegro.audio](./docs/screenshots/signin.png "Allegro sign-in page")
 
