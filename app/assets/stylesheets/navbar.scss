@@ -19,6 +19,20 @@
   margin: 0 10px;
 }
 
+.navbar-profile-link {
+  color: $grey;
+  font-size: 16px;
+  margin: 11px 17px 0px 12px;
+}
+
+.navbar-profile-pic {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-right: 3px;
+}
+
 .stream-link {
   color: $grey;
   margin-top: 11px;

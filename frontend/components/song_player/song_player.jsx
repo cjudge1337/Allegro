@@ -79,8 +79,13 @@ class SongPlayer extends React.Component {
   }
 
    render() {
+     let hidden = "";
+     if (this.props.nowPlaying.playStatus === Sound.status.STOPPED) {
+       hidden = "hidden";
+     }
+
      return (
-       <div className="song-player" id={this.props.hiddenOnSignup}>
+       <div className="song-player" id={hidden}>
 
          <Player togglePlay={this.togglePlay.bind(this)}
                  stop={this.stop.bind(this)}
@@ -95,9 +100,8 @@ class SongPlayer extends React.Component {
                    clickAdjust={this.clickAdjust.bind(this)}
                    className="song-player-progress-container"/>
 
-         <Details title={this.props.nowPlaying.song.title}
-           artist={this.props.nowPlaying.song.artist}
-           className="song-player-details-container"/>
+                 <Details nowPlaying={this.props.nowPlaying}
+                  className="song-player-details-container"/>
          <Sound
                url={this.props.nowPlaying.song.song_url}
                playStatus={this.props.nowPlaying.playStatus}

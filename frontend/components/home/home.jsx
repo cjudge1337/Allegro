@@ -10,6 +10,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
+        <h1 className="home-stream-title">Stream</h1>
         <SongsListContainer songs={this.props.songs}/>
       </div>
     );

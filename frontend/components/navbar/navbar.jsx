@@ -14,18 +14,26 @@ class Navbar extends React.Component {
   }
 
   render() {
+    let user = {};
+    if (this.props.currentUser) {
+      user = this.props.currentUser;
+    }
+
     return (
       <nav className="navbar-container" id={this.props.hiddenOnSignup}>
         <div className="navbar-left">
-          <img src="/assets/logo.png" className="navbar-logo"/>
           <Link to="/home">
-            <h1 className="stream-link">Stream</h1>
+            <img src="/assets/logo.png" className="navbar-logo"/>
           </Link>
         </div>
         <div className="navbar-right">
           <Link to="/upload">
             <img src="/assets/upload-icon.png" className="upload-img"></img>
           </Link>
+          <Link to={`/user/${user.id}`} className="navbar-profile-link">
+            <h1>{user.username}</h1>
+          </Link>
+          <img src={user.profile_pic_url} className="navbar-profile-pic"/>
           <button type="button" onClick={this.handleLogout} className="logout-button">Logout</button>
         </div>
       </nav>
