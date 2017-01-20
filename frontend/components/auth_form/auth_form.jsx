@@ -76,7 +76,7 @@ constructor(props) {
 				</video>
 
 				<img src="/assets/logo.png" className="logo" />
-				<div className="login-form-container">
+				<div className="login-form-container animated bounceInDown">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						{this.title()}
 						{this.navLink()}

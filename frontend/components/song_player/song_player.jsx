@@ -90,7 +90,7 @@ class SongPlayer extends React.Component {
      }
 
      return (
-       <div className="song-player" id={hidden}>
+       <div className="song-player animated fadeInUp" id={hidden}>
 
          <Player togglePlay={this.togglePlay.bind(this)}
                  stop={this.stop.bind(this)}

@@ -14,7 +14,7 @@ class SongListItem extends React.Component {
 
   render() {
     return (
-      <li className="song-list-item" key={this.props.song.id}>
+      <li className="song-list-item animated zoomIn" key={this.props.song.id}>
         <img src={this.props.song.song_img_url} className="song-list-image"></img>
         <button type="button" className="song-list-item-button" onClick={this.play}><i className="fa fa-play fa-4x play-button"/></button>
         <Link to={`/song/${this.props.song.id}`} className="song-list-show-link">
