@@ -10,6 +10,19 @@ class SongsList extends React.Component {
     this.props.fetchSongs();
   }
 
+  shuffle(array) {
+    let counter = array.length;
+    while (counter > 0) {
+        let index = Math.floor(Math.random() * counter);
+        counter--;
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+  }
+
   render() {
     let songItems;
     let songs = this.props.songs.index;
@@ -21,8 +34,8 @@ class SongsList extends React.Component {
                       playSong={this.props.playSong} />
                   )
     );
+    songItems = this.shuffle(songItems);
   }
-
     return (
       <div className="songs-list-container">
         <ul className="songs-list">

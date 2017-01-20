@@ -19,6 +19,11 @@ class Navbar extends React.Component {
       user = this.props.currentUser;
     }
 
+    // let songsList;
+    // if (this.props.songs) {
+    //
+    // }
+
     return (
       <nav className="navbar-container" id={this.props.hiddenOnSignup}>
         <div className="navbar-left">
