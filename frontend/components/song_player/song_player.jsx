@@ -3,6 +3,7 @@ import Details from './elements/details';
 import Player from './elements/player';
 import Progress from './elements/progress';
 import Sound from 'react-sound';
+import { fetchSongs } from '../../util/song_api_util';
 
 class SongPlayer extends React.Component {
 
@@ -45,7 +46,11 @@ class SongPlayer extends React.Component {
   }
 
   handleSongFinished() {
-    //Figure out how to load next song
+    // let songsResponse = fetchSongs();
+    // let songs = songsResponse.success
+    // let song = songs[Math.floor(Math.random() * songs.length)];
+    // debugger
+    // this.props.playSong(song);
   }
 
   togglePlay() {
