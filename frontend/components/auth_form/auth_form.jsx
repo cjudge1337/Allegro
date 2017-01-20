@@ -67,6 +67,14 @@ constructor(props) {
 	render() {
 		return (
 			<div className="login-page-container">
+
+				<video className="video" autoPlay="autoplay" loop="loop" muted="">
+				  <source src="http://res.cloudinary.com/diqwtxdmo/video/upload/v1484878143/Cheer-Up_sbuapq.mp4" type="video/mp4" />
+				  <source src="http://res.cloudinary.com/diqwtxdmo/video/upload/v1484878181/Cheer-Up_h4v1sr.ogv" type="video/ogg" />
+				  <source src="http://res.cloudinary.com/diqwtxdmo/video/upload/v1484878220/Cheer-Up_o4sejt.webm" type="video/webm" />
+				  Your browser doesn't support HTML5 video.
+				</video>
+
 				<img src="/assets/logo.png" className="logo" />
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
