@@ -28,7 +28,7 @@ class Navbar extends React.Component {
         </div>
         <div className="navbar-right">
           <Link to="/upload">
-            <img src="/assets/upload-icon.png" className="upload-img"></img>
+            <h1 className="navbar-upload-link">Upload</h1>
           </Link>
           <Link to={`/user/${user.id}`} className="navbar-profile-link">
             <h1>{user.username}</h1>
