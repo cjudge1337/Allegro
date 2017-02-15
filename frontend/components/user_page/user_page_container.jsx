@@ -3,10 +3,10 @@ import { fetchUser, updateUser } from '../../actions/user_actions';
 import { fetchSong, playSong } from '../../actions/song_actions';
 import UserPage from './user_page';
 
-const mapStateToProps = ({ session, user }) => (
+const mapStateToProps = ({ session, user }) => ({
   session,
   user
-);
+});
 
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: id => dispatch(fetchUser(id)),

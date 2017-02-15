@@ -10,6 +10,7 @@ class UserPage extends React.Component {
     super(props);
     this.state = { modalOpen: false };
 
+    this.hiddenUnlessUser = this.hiddenUnlessUser.bind(this);
     this.uploadPanelPic = this.uploadPanelPic.bind(this);
     this.uploadProfilePic = this.uploadProfilePic.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -29,11 +30,11 @@ class UserPage extends React.Component {
           const path = results[0].path;
           const url = "http://res.cloudinary.com/diqwtxdmo/image/upload/";
           let newUser = {
-            id: this.props.id,
-            username: this.props.username,
+            id: this.props.user.id,
+            username: this.props.user.username,
             panel_url: (url + path),
-            profile_pic_url: this.props.profile_pic_url,
-            bio: this.props.bio
+            profile_pic_url: this.props.user.profile_pic_url,
+            bio: this.props.user.bio
           };
 
           this.props.updateUser(newUser);
@@ -51,17 +52,25 @@ class UserPage extends React.Component {
           const path = results[0].path;
           const url = "http://res.cloudinary.com/diqwtxdmo/image/upload/";
           let newUser = {
-            id: this.props.id,
-            username: this.props.username,
-            panel_url: this.props.panel_url,
+            id: this.props.user.id,
+            username: this.props.user.username,
+            panel_url: this.props.user.panel_url,
             profile_pic_url: (url + path),
-            bio: this.props.bio
+            bio: this.props.user.bio
           };
 
           this.props.updateUser(newUser);
         }
       }
     );
+  }
+
+  hiddenUnlessUser() {
+    if (this.props.session.currentUser.username !== this.props.user.username) {
+      return "hidden";
+    } else {
+      return "";
+    }
   }
 
   handleClick(e) {
@@ -80,8 +89,8 @@ class UserPage extends React.Component {
 
   render() {
     let songItems;
-    if (this.props.songs) {
-      songItems = this.props.songs.map((song, idx) => (
+    if (this.props.user.songs) {
+      songItems = this.props.user.songs.map((song, idx) => (
           <UserPageSong key={idx}
                         song={song}
                         session={this.props.session}
@@ -93,22 +102,22 @@ class UserPage extends React.Component {
 
     return (
       <div className="user-page-container">
-        <img src={this.props.panel_url} className="user-page-panel" />
+        <img src={this.props.user.panel_url} className="user-page-panel" />
         <div className="user-page-details">
-          <img src={this.props.profile_pic_url} className="user-profile-pic" />
-          <h1 className="user-page-username">{this.props.username}</h1>
+          <img src={this.props.user.profile_pic_url} className="user-profile-pic" />
+          <h1 className="user-page-username">{this.props.user.username}</h1>
         </div>
         <div className="user-page-buttons">
-          <button className="user-page-button" onClick={this.uploadProfilePic}>Update User Pic</button>
-          <button className="user-page-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
-          <button className="user-page-button" onClick={this.handleClick}>Update Info</button>
+          <button id={this.hiddenUnlessUser()} className="user-page-button" onClick={this.uploadProfilePic}>Update User Pic</button>
+          <button id={this.hiddenUnlessUser()} className="user-page-button" onClick={this.uploadPanelPic}>Update Panel Pic</button>
+          <button id={this.hiddenUnlessUser()} className="user-page-button" onClick={this.handleClick}>Update Info</button>
         </div>
         <h3 className="user-page-songs-title">Songs</h3>
         <div className="user-page-lower-container">
           <ul className="user-page-songs-list">
             {songItems}
           </ul>
-          <p className="user-page-bio">{this.props.bio}</p>
+          <p className="user-page-bio">{this.props.user.bio}</p>
         </div>
 
         <Modal
@@ -118,11 +127,11 @@ class UserPage extends React.Component {
               onAfterOpen={this.onModalOpen}
               contentLabel={"Modal"}>
                 <button className="modal-close" onClick={this.onModalClose}>X</button>
-                <InfoForm bio={this.props.bio}
-                          username={this.props.username}
+                <InfoForm bio={this.props.user.bio}
+                          username={this.props.user.username}
                           id={this.props.id}
-                          panel_url={this.props.panel_url}
-                          profile_pic_url={this.props.profile_pic_url}
+                          panel_url={this.props.user.panel_url}
+                          profile_pic_url={this.props.user.profile_pic_url}
                           updateUser={this.props.updateUser}></InfoForm>
         </Modal>
       </div>

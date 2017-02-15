@@ -23,6 +23,7 @@ class CommentListItem extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <li className="comment-list-item" key={this.props.comment.id}>
         <img src={this.props.comment.user.profile_pic_url} className="comment-list-item-pic" />
