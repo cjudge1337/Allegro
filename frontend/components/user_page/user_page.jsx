@@ -117,7 +117,10 @@ class UserPage extends React.Component {
           <ul className="user-page-songs-list">
             {songItems}
           </ul>
-          <p className="user-page-bio">{this.props.user.bio}</p>
+          <div className="user-page-bio-container">
+            <p className="user-page-bio-title">Bio:</p>
+            <p className="user-page-bio">{this.props.user.bio}</p>
+          </div>
         </div>
 
         <Modal
@@ -129,10 +132,11 @@ class UserPage extends React.Component {
                 <button className="modal-close" onClick={this.onModalClose}>X</button>
                 <InfoForm bio={this.props.user.bio}
                           username={this.props.user.username}
-                          id={this.props.id}
+                          id={this.props.user.id}
                           panel_url={this.props.user.panel_url}
                           profile_pic_url={this.props.user.profile_pic_url}
-                          updateUser={this.props.updateUser}></InfoForm>
+                          updateUser={this.props.updateUser}
+                          closeModal={this.onModalClose}></InfoForm>
         </Modal>
       </div>
     );

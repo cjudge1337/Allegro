@@ -24,6 +24,7 @@ class InfoForm extends React.Component {
     };
 
     this.props.updateUser(newUser);
+    this.props.closeModal();
   }
 
   handleBioChange(e) {
@@ -38,7 +39,7 @@ class InfoForm extends React.Component {
   }
 
    render() {
-
+     
      return (
        <form className="user-page-info-form" onSubmit={this.handleSubmit}>
          <label className="user-page-form-label"> Username:

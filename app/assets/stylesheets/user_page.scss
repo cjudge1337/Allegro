@@ -49,6 +49,15 @@
   margin-left: 7px;
 }
 
+.user-page-bio-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-page-bio-title {
+  font-size: 24px;
+}
+
 .user-page-bio {
   font-size: 14px;
 }
