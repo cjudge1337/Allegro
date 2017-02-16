@@ -13,6 +13,14 @@
   justify-content: center;
 }
 
+.landing {
+  position: fixed;
+  z-index: -5;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+}
+
 .login-page-container {
   display: flex;
   align-items: center;
@@ -29,7 +37,7 @@
 .login-form-container {
   display: flex;
   align-self: center;
-  background-color: $black;
+  background-color: $white;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -38,15 +46,15 @@
   box-shadow: 3px 3px 3px 2px black;
   font-size: 15px;
   margin-top: 10px;
-  color: $grey;
-  opacity: 0.8;
+  color: $black;
+  opacity: 0.9;
 }
 
 .login-form-box {
   display: flex;
   flex-direction: column;
   text-align: left;
-  background-color: $black;
+  background-color: $white;
 }
 
 .form-title {
@@ -56,8 +64,11 @@
   font-size: 25px;
 }
 
+.auth-link {
+  color: $black;
+}
+
 .login-input {
-  border-bottom: 1px solid black;
   margin-bottom: 10px;
   color: black;
   padding-left: 8px;

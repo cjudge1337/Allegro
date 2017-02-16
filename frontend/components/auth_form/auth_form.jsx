@@ -46,9 +46,9 @@ constructor(props) {
 
 	navLink() {
 		if (this.props.formType === "sign-in") {
-			return <Link to="/sign-up">Sign up instead</Link>;
+			return <Link to="/sign-up" className="auth-link">Sign up instead</Link>;
 		} else {
-			return <Link to="/sign-in">Sign in instead</Link>;
+			return <Link to="/sign-in" className="auth-link">Sign in instead</Link>;
 		}
 	}
 
@@ -64,19 +64,16 @@ constructor(props) {
 		);
 	}
 
+	// <img src="/assets/logo.png" className="logo" />
 	render() {
 		return (
 			<div className="login-page-container">
 
-				<video className="video" autoPlay="autoplay" loop="loop" muted="">
-				  <source src="http://res.cloudinary.com/diqwtxdmo/video/upload/v1484878143/Cheer-Up_sbuapq.mp4" type="video/mp4" />
-				  <source src="http://res.cloudinary.com/diqwtxdmo/video/upload/v1484878181/Cheer-Up_h4v1sr.ogv" type="video/ogg" />
-				  <source src="http://res.cloudinary.com/diqwtxdmo/video/upload/v1484878220/Cheer-Up_o4sejt.webm" type="video/webm" />
-				  Your browser doesn't support HTML5 video.
-				</video>
+				<img src="/assets/landing.jpg" className="landing"/>
 
-				<img src="/assets/logo.png" className="logo" />
-				<div className="login-form-container animated bounceInDown">
+				<h1 className="">Herp> Derp. Hghjhbjhgkjhkj.</h1>
+
+				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						{this.title()}
 						{this.navLink()}

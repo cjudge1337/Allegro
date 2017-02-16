@@ -1,7 +1,7 @@
 html {
 	position: relative;
 	height: 100%;
-	background: $grey;
+	background: $white;
 }
 
 body {
@@ -62,6 +62,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+	color: $dark-red;
 }
 
 input {

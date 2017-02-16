@@ -20,6 +20,7 @@ class SongPlayer extends React.Component {
 
   componentDidMount() {
     this.setState({$progressBar: $(".progress-bar")});
+    soundManager.setup({debugMode: false});
   }
 
   formatMilliseconds(milliseconds) {
