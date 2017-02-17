@@ -25,6 +25,9 @@ class Navbar extends React.Component {
           <Link to="/home">
             <img src="/assets/logo.png" className="navbar-logo"/>
           </Link>
+          <Link to="/home">
+            <h1 className="navbar-upload-link">Stream</h1>
+          </Link>
         </div>
         <div className="navbar-right">
           <Link to="/upload">

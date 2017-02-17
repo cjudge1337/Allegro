@@ -71,7 +71,7 @@ constructor(props) {
 
 				<img src="/assets/landing.jpg" className="landing"/>
 
-				<h1 className="">Herp> Derp. Hghjhbjhgkjhkj.</h1>
+				<h1 className="landing-text">Find the latest in great music.</h1>
 
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">

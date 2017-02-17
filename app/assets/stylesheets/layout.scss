@@ -56,7 +56,6 @@ form {
 }
 
 a {
-	transition: 0.3s ease;
   color: $grey;
 }
 
@@ -64,6 +63,17 @@ a:hover {
   text-decoration: underline;
 	color: $dark-red;
 }
+
+a > h1:hover {
+  text-decoration: underline;
+	color: $dark-red;
+}
+
+a > h2:hover {
+  text-decoration: underline;
+	color: $dark-red;
+}
+
 
 input {
 	background-color: white;

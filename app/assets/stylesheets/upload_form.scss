@@ -8,11 +8,11 @@
   display: flex;
   height: 400px;
   width: 400px;
-  background-color: $black;
+  background-color: #f5f5f5;
   flex-direction: column;
   justify-content: space-around;
-  color: $grey;
-  box-shadow: 3px 3px 3px 2px black;
+  color: $black;
+  box-shadow: 1px 1px 6px 0px black;
   border-radius: 5px;
   font-size: 17px;
   align-items: center;
@@ -26,6 +26,7 @@
 .form-submit {
   transition: background-color 0.3s;
   background-color: $dark-red;
+  color: $white;
 	box-shadow: 1px 1px 2px 0px black;
   border-radius: 3px;
   font-size: 11px;

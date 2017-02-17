@@ -27,11 +27,10 @@
   flex-direction: column;
 }
 
-.logo {
-  width: 30%;
-  height: 17%;
-  align-self: center;
-  padding: 20px;
+.landing-text {
+  color: $white;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
 .login-form-container {
