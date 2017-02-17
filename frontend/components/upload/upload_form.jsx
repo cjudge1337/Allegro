@@ -23,7 +23,6 @@ class UploadForm extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    debugger
     let song = this.state;
     this.props.createSong(song).then(res => {
       this.props.router.push(`/song/${res.song.id}`);
