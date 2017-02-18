@@ -24,7 +24,7 @@ export const style = {
     zIndex          : 3,
     opacity         : 0,
     transition      : 'opacity 1s',
-    backgroundColor : "#333333",
+    backgroundColor : "black",
   	boxShadow       : "3px 3px 2px 0px black"
   }
 };
