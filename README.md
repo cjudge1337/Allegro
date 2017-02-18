@@ -37,7 +37,7 @@
 ## Technical Challenges
 A major challenge was audio playback and how to make it continuous between pages. I decided on making my eventual SongPlayer component sit outside the App component that renders everything else.
 
-The SongPlayer component is composed of several sub-components. The audio playback comes from the [React Sound][https://www.npmjs.com/package/react-sound] component, but all this does is play audio. In order to provide some sort of song info display and user control, I needed to built several other components.
+The SongPlayer component is composed of several sub-components. The audio playback comes from the [React Sound](https://www.npmjs.com/package/react-sound) component, but all this does is play audio. In order to provide some sort of song info display and user control, I needed to built several other components.
 ```javascript
 return (
   <div className="song-player animated fadeInUp" id={hidden}>
