@@ -64,7 +64,6 @@ constructor(props) {
 		);
 	}
 
-	// <img src="/assets/logo.png" className="logo" />
 	render() {
 		return (
 			<div className="login-page-container">
