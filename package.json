@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
+    "postinstall": "./node_modules/.bin/webpack",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -44,5 +45,8 @@
   "engines": {
     "node": "6.2.1",
     "npm": "3.9.3"
+  },
+  "devDependencies": {
+    "jest": "^20.0.1"
   }
 }
